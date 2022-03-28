@@ -10,7 +10,7 @@ FX292 and FX293 analog load cells are *NOT* supported.
 
 ## Quick start
 ### Minimal setup
-```ruby
+```
    RED ---------- VCC (2.7-5.5V)
 YELLOW ---------- SCL
  WHITE ---------- SDA
@@ -23,34 +23,34 @@ YELLOW ---------- SCL
 ### Main Program
 #### Include
 * In your `.ino` file, include [`FX29K.h`](./FX29K.h):
-```ruby
+```c++
 #include "FX29K.h"
 ```
 #### Declaration
 * Declare your `FX29K` object globally, with constructors:
-```ruby  
+```c++  
 FX29K::FX29K(uint8_t addr, uint8_t range);
 FX29K::FX29K(uint8_t addr, uint8_t range, TwoWire* i2cPtr);
 ```
 * For example, for `FX29K0-040B-0010-L`:
-```ruby
+```c++
 FX29K fx29k(FX29K0, 0010, &Wire);
 ```
 
 #### Initialization
 * Tare load cell with:
-```ruby
+```c++
 void FX29K::tare(void);
 void FX29K::tare(uint16_t samples);
 ```
 
 #### Measurement
 * Read raw wheatstone bridge data with:
-```ruby
+```c++
 uint16_t FX29K::getRawBridgeData(void);
 ```
 * Get one measurement:
-```ruby
+```c++
 float FX29K::getPounds(void);
 float FX29K::getKilograms(void);
 float FX29K::getGrams(void);
