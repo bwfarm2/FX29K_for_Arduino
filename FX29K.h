@@ -9,35 +9,35 @@
 #define FX29K3 0x48
 #define FX29K4 0x51
 
-class FX29K{
+class FX29K
+{
 
-  private:
-    uint8_t _i2cAddr = FX29K0;
-    uint8_t _range = 0010;
-    uint16_t _tare = 0;
-    TwoWire* _i2cPtr = &Wire;
-  
-  public:
-    FX29K(uint8_t addr, uint8_t range);
-    FX29K(uint8_t addr, uint8_t range, TwoWire* i2cPtr);
-    ~FX29K(void);
-   
-    uint16_t tare(void);
-    uint16_t tare(uint16_t samples);
-  
-    uint16_t getTare(void);
-  
-    void requestMeasurement(void);
-  
-    uint16_t getRawBridgeData(void);
-  
-    float getPounds(void);
-    float getKilograms(void);
-    float getGrams(void);
-  
-    void write(TwoWire* i2cPtr, uint8_t i2cAddr, uint8_t* arr, uint8_t byteCount);
-    void read(TwoWire* i2cPtr, uint8_t i2cAddr, uint8_t* arr, uint8_t byteCount);
-  
+private:
+  uint8_t _i2cAddr = FX29K0;
+  uint8_t _range = 0010;
+  uint16_t _tare = 0;
+  TwoWire *_i2cPtr = &Wire;
+
+public:
+  FX29K(uint8_t addr, uint8_t range);
+  FX29K(uint8_t addr, uint8_t range, TwoWire *i2cPtr);
+  ~FX29K(void);
+
+  uint16_t tare(void);
+  uint16_t tare(uint16_t samples);
+
+  uint16_t getTare(void);
+
+  void requestMeasurement(void);
+
+  uint16_t getRawBridgeData(void);
+
+  float getPounds(void);
+  float getKilograms(void);
+  float getGrams(void);
+
+  uint8_t write(TwoWire *i2cPtr, uint8_t i2cAddr, uint8_t *arr, uint8_t byteCount);
+  uint8_t read(TwoWire *i2cPtr, uint8_t i2cAddr, uint8_t *arr, uint8_t byteCount);
 };
 
 #endif
