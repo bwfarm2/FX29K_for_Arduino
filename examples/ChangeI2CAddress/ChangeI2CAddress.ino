@@ -1,8 +1,9 @@
 /*
-IMPORTANT:
+DISCLAIMER:
 By running this script you will alter the sensor's interal data registers.
 This is potentially dangerous and will void your sensor's warranty.
-Do NOT proceed unless you agree with the following quality assurance clause from the manufacturer:
+I will not take responsibilty for any potential damage that may be done to your sensors.
+Do NOT proceed unless you agree with the following quality assurance clause from the manufacturer and fully understand the potential risks.
 "
 Caution:
 For the digital sensor. User can change the address along with the guide as below link.
