@@ -56,5 +56,14 @@ float FX29K::getKilograms(void);
 float FX29K::getGrams(void);
 ```
 
-### Misc
-* Refer to [`./FX29K_for_Arduino.ino`](./FX29_for_Arduino.ino) and [datasheets](https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Data+Sheet%7FFX29%7FA5%7Fpdf%7FEnglish%7FENG_DS_FX29_A5.pdf%7FCAT-FSE0006) for further information.
+## Simple weight measurement sketch
+* [`/examples/Simple/Simple.ino`](./examples/Simple/Simple.ino)
+## Changing I2C address (untested)
+
+**IMPORTANT**:<br>
+By running this script you will alter the sensor's interal data registers. This is **potentially dangerous and will void your sensor's warranty**.<br>
+Do **NOT** proceed unless you agree with the following quality assurance clause from the manufacturer and fully understand the potential risks. I will not take responsibilty for any potential damage that may be done to your sensors.<br>
+> **Caution**:<br>For the digital sensor. User can change the address along with the guide as below link.<br>Please notice, any data changed by users means users give up the quality assurance terms. TE will not guarantee the sensor performance any more.
+* [`/examples/ChangeI2CAddress/ChangeI2CAddress.ino`](./examples/ChangeI2CAddress/ChangeI2CAddress.ino)
+## Datasheets
+* [Datasheets](https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Data+Sheet%7FFX29%7FA5%7Fpdf%7FEnglish%7FENG_DS_FX29_A5.pdf%7FCAT-FSE0006)
