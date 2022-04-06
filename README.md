@@ -62,7 +62,7 @@ float FX29K::getGrams(void);
 
 **DISCLAIMER**:<br>
 By running this script you will alter the sensor's interal data registers. This is **potentially dangerous and will void your sensor's warranty**.<br>
-I will not take responsibilty for any potential damage that may be done to your sensors.<br>
+Author will not take responsibilty for any potential damage that may be done to your sensors.<br>
 Do **NOT** proceed unless you agree with the following quality assurance clause from the manufacturer and fully understand the potential risks.<br>
 > **Caution**:<br>For the digital sensor. User can change the address along with the guide as below link.<br>Please notice, any data changed by users means users give up the quality assurance terms. TE will not guarantee the sensor performance any more.
 * [`/examples/ChangeI2CAddress/ChangeI2CAddress.ino`](./examples/ChangeI2CAddress/ChangeI2CAddress.ino)
