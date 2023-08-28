@@ -25,9 +25,14 @@ uint8_t i2c_read_bytes(TwoWire *i2cPtr, uint8_t i2cAddr, uint8_t *arr, uint8_t b
 
 void setup() {
   Wire.begin();
-
+  //Set-up Step:  Power sensor from Digital Pin to have better control of on/off timing.
+  pinMode(5, OUTPUT);
+  digitalWrite(5,LOW);
+  delay(100);
+  digitalWrite(5, HIGH);
+  delay(3);  
   // Step 1: Put sensor into command mode within 6ms after power up
-  uint8_t command1[3] = {0x0a, 0x00, 0x00};
+  uint8_t command1[3] = {0xA0, 0x00, 0x00};
   uint8_t step1ErrorCode = i2c_write_bytes(&Wire, OLD_ADDR, command1, 3);
   Serial.begin(SERIAL_BAUD_RATE);
   if (!step1ErrorCode) {
@@ -38,6 +43,7 @@ void setup() {
     if (!step2ErrorCode) {
       Serial.println(F("Step 2 I2C transaction OK"));
       // Step 3: Fetch word 02 from EEPROM
+      delay(1);
       uint8_t command3[3] = {0x00};
       uint8_t step3ErrorCode = i2c_read_bytes(&Wire, OLD_ADDR, command3, 3);
       if (!step3ErrorCode) {
